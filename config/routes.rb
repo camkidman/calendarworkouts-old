@@ -1,4 +1,7 @@
 Calendarworkouts::Application.routes.draw do
+  resources :personal_data
+
+
   devise_for :users
 
   resources :users

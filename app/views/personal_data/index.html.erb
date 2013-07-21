@@ -1,0 +1,47 @@
+<h1>Listing personal_data</h1>
+
+<table>
+  <tr>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Activity level</th>
+    <th>User</th>
+    <th>Bicep</th>
+    <th>Waist</th>
+    <th>Thighs</th>
+    <th>Hips</th>
+    <th>Chest</th>
+    <th>Calves</th>
+    <th>Shoulders</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @personal_data.each do |personal_datum| %>
+  <tr>
+    <td><%= personal_datum.height %></td>
+    <td><%= personal_datum.weight %></td>
+    <td><%= personal_datum.age %></td>
+    <td><%= personal_datum.gender %></td>
+    <td><%= personal_datum.activity_level %></td>
+    <td><%= personal_datum.user_id %></td>
+    <td><%= personal_datum.bicep %></td>
+    <td><%= personal_datum.waist %></td>
+    <td><%= personal_datum.thighs %></td>
+    <td><%= personal_datum.hips %></td>
+    <td><%= personal_datum.chest %></td>
+    <td><%= personal_datum.calves %></td>
+    <td><%= personal_datum.shoulders %></td>
+    <td><%= link_to 'Show', personal_datum %></td>
+    <td><%= link_to 'Edit', edit_personal_datum_path(personal_datum) %></td>
+    <td><%= link_to 'Destroy', personal_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Personal datum', new_personal_datum_path %>

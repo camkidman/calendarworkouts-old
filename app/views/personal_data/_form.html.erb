@@ -1,0 +1,69 @@
+<%= form_for(@personal_datum) do |f| %>
+  <% if @personal_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@personal_datum.errors.count, "error") %> prohibited this personal_datum from being saved:</h2>
+
+      <ul>
+      <% @personal_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :activity_level %><br />
+    <%= f.text_field :activity_level %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :bicep %><br />
+    <%= f.number_field :bicep %>
+  </div>
+  <div class="field">
+    <%= f.label :waist %><br />
+    <%= f.number_field :waist %>
+  </div>
+  <div class="field">
+    <%= f.label :thighs %><br />
+    <%= f.number_field :thighs %>
+  </div>
+  <div class="field">
+    <%= f.label :hips %><br />
+    <%= f.number_field :hips %>
+  </div>
+  <div class="field">
+    <%= f.label :chest %><br />
+    <%= f.number_field :chest %>
+  </div>
+  <div class="field">
+    <%= f.label :calves %><br />
+    <%= f.number_field :calves %>
+  </div>
+  <div class="field">
+    <%= f.label :shoulders %><br />
+    <%= f.number_field :shoulders %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
