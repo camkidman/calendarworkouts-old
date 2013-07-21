@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :birthday, :birthmonth, :birthyear, :city, :country, :firstname, :lastname, :state, :username
-  has_one :personal_data
+  has_one :personal_data, dependent: :destroy
 end
