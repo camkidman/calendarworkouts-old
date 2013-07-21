@@ -1,4 +1,7 @@
 Calendarworkouts::Application.routes.draw do
+  resources :exercises
+
+
   resources :personal_data
 
 
