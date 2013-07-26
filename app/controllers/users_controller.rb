@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-  def index
-    @users = User.find(params[:id])
 
+  # before_filter authenticate_user!, :only => [:index, :edit, :update, :destroy]
+  def index
+    @user = 
+    @personal_datum = current_user.
 
     respond_to do |format|
       format.html # index.html.erb

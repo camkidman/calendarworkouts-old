@@ -1,7 +1,7 @@
 <h2>Sign up</h2>
 
 <%= form_for(@user, :as => @user, :url => registration_path(@user)) do |f| %>
-
+  <%= devise_error_messages! %>
 
   <div><%= f.label :username %><br />
   		<%= f.text_field :username %></div>
