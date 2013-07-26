@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724054150) do
+ActiveRecord::Schema.define(:version => 20130726003217) do
 
   create_table "body_parts", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(:version => 20130724054150) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "body_parts_exercises", :id => false, :force => true do |t|
+    t.integer "body_part_id"
+    t.integer "exercise_id"
+  end
+
+  add_index "body_parts_exercises", ["body_part_id", "exercise_id"], :name => "body_part_exercises_index"
+
+  create_table "body_parts_muscle_groups", :id => false, :force => true do |t|
+    t.integer "body_part_id"
+    t.integer "muscle_group_id"
+  end
+
+  add_index "body_parts_muscle_groups", ["body_part_id", "muscle_group_id"], :name => "body_parts_muscle_group_index"
 
   create_table "exercises", :force => true do |t|
     t.string   "name"
@@ -29,6 +43,27 @@ ActiveRecord::Schema.define(:version => 20130724054150) do
     t.string   "muscle_group"
     t.string   "video_url"
     t.boolean  "gym_friendly"
+  end
+
+  create_table "exercises_muscle_groups", :id => false, :force => true do |t|
+    t.integer "exercise_id"
+    t.integer "muscle_group_id"
+  end
+
+  add_index "exercises_muscle_groups", ["exercise_id", "muscle_group_id"], :name => "exercisesmusclegroupsindex"
+
+  create_table "exercises_workouts", :id => false, :force => true do |t|
+    t.integer "exercise_id", :null => false
+    t.integer "workout_id",  :null => false
+  end
+
+  add_index "exercises_workouts", ["exercise_id", "workout_id"], :name => "index_exercises_workouts_on_exercise_id_and_workout_id"
+
+  create_table "muscle_groups", :force => true do |t|
+    t.string   "name"
+    t.string   "movement"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "personal_data", :force => true do |t|
