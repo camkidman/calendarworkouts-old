@@ -2,11 +2,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  # before_filter authenticate_user!, :only => [:index, :edit, :update, :destroy]
+  before_filter authenticate_user!, :only => [:index, :edit, :update, :destroy, :show]
+  
   def index
-    @user = 
-    @personal_datum = current_user.
-
+    @user = current_user
+    @personal_info = @user.personal_info
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -16,8 +16,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-
+    user = current_user
+    @personal_info = user.personal_info
+    redirect_to new_user_registration_path unless user.id
+    redirect_to new_user_personal_info_path unless user.personal_info
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

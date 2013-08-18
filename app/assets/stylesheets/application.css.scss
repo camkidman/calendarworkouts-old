@@ -11,10 +11,22 @@
  *= require_self
  *= require_tree .
  */
- #header ul {
- 	list-style-type:none;
- 
+ #header {
+
+ 	background-color: lightblue;
+
+ 	ul {
+ 		.main_nav {
+ 			list-style-type:none;
+ 			font-weight: bold;
+ 		}
+
+ 		.hmenu {
+		list-style-type:none;
+		text-align: right;
+	}
  	li {
  		display: inline;
- 	}
+ 		}
+	}
 }

@@ -1,0 +1,13 @@
+<div id="current_user_info">
+	<table>
+	<tr>
+	</tr>
+	<% current_user.personal_info.attributes.each_pair do |n, v| %>
+	<tr><td><%= n %></td><td> <%= v %></td></tr>
+<% end %>
+</table>
+</div>
+<br />
+<%= link_to "Detailed Information", "#" %>
+<%= link_to "Track Your Info", edit_user_personal_info_path(current_user.id, current_user.personal_info.id) %> 
+<!-- This line is giving an error ^^^ -->

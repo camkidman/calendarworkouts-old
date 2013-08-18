@@ -1,62 +1,25 @@
-<div id="user_data">
-	<h2>This Week:</h2>
-		<div id="workout_table">
+<div id="user_workouts">
 	<table>
 		<tr>
-			<th>Sun</th>
-			<th>Mon</th>
-			<th>Tues</th>
-			<th>Wed</th>
-			<th>Thurs</th>
-			<th>Fri</th>
-			<th>Sat</th>
+			<th>Sunday</th>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>
 		</tr>
 		<tr>
-			<td>Day 1</td>
-			<td>Day 2</td>
-			<td>Day 3</td>
-			<td>Day 4</td>
-			<td>Day 5</td>
-			<td>Day 6</td>
-			<td>Day 7</td>
+			<td>Workout Placeholder</td>
+			<td>Workout Placeholder</td>
+			<td>Workout Placeholder</td>
+			<td>Workout Placeholder</td>
+			<td>Workout Placeholder</td>
+			<td>Workout Placeholder</td>
+			<td>Workout Placeholder</td>
 		</tr>
 	</table>
-		</div>
-<br />
-	<div id="Workout Progress">
-		<h2>Your Progress:</h2>
-	<%= @personal_datum do |d| %>
-		<div id="<%=@personal_datum.version %>">
-			<table>
-				<tr>
-					<td>Weight</td>
-					<td><%= d.weight %></td>
-				</tr>
-				<tr>
-					<td>Bicep</td>
-					<td><%= d.bicep %></td>
-				</tr>
-				<tr>
-					<td>Waist</td>
-					<td><%= d.waist %></td>
-				</tr>
-				<tr>
-					<td>Chest</td>
-					<td><%= d.chest %></td>
-				</tr>
-				<tr>
-					<td>Calves</td>
-					<td><%= d.calves %></td>
-				</tr>
-				<tr>
-					<td>Thighs</td>
-					<td><%= d.thighs %></td>
-				</tr>
-				<tr>
-					<td>Shoulders</td>
-					<td><%= d.shoulders %></td>
-				</tr>
-			</table>
-		</div>
-
+	<%= link_to "Last Week", "#" %>
+	<%= link_to "Next Week", "#" %>
 </div>
+<br />

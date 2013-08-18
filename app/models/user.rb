@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  attr_accessible :birthday, :birthmonth, :birthyear, :city, :country, :firstname, :lastname, :state, :username
-  has_one :personal_data, dependent: :destroy
+  attr_accessible :birthday, :birthmonth, :birthyear, :city, :country, :firstname, :lastname, :state, :username, :personal_info_id, :email, :password, :password_confirmation
+  attr_accessible :personal_info_attributes
+  has_one :personal_info, dependent: :destroy
+  # accepts_nested_attributes_for :personal_info
+  	#														:reject_if => #insert helper(?) that will use the previous value if not updated,
+  	#														:allow_destroy => true
+
 end

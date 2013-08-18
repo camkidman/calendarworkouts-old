@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130726003217) do
+ActiveRecord::Schema.define(:version => 20130727234746) do
 
   create_table "body_parts", :force => true do |t|
     t.string   "name"
@@ -83,6 +83,24 @@ ActiveRecord::Schema.define(:version => 20130726003217) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.boolean  "gym"
+  end
+
+  create_table "personal_info", :force => true do |t|
+    t.integer  "height"
+    t.integer  "weight"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "activity_level"
+    t.integer  "user_id"
+    t.integer  "bicep"
+    t.integer  "waist"
+    t.integer  "thighs"
+    t.integer  "hips"
+    t.integer  "chest"
+    t.integer  "calves"
+    t.integer  "shoulders"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
