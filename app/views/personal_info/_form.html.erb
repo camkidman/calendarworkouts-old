@@ -1,3 +1,5 @@
+<%= form_for @personal_info, url: user_personal_info_index_path, html: { method: :post } do |f| %>
+
     <%= f.label :activity_level %><br>
     <%= f.number_field :activity_level %>
 
@@ -40,4 +42,4 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-
+<% end %>
