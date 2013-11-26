@@ -7,7 +7,7 @@ Calendarworkouts::Application.routes.draw do
 
 
   resources :users do
-    resources :personal_info
+    resources :personal_info, controller: 'personal_info'
   end
 
   root :to => "users#show" 
