@@ -13,8 +13,8 @@ class PersonalInfoController < ApplicationController
   # GET /personal_info/1
   # GET /personal_info/1.json
   def show
-    @personal_info = PersonalInfo.find(params[:id])
-
+    @personal_info = @user.personal_info
+    @user = current_user.id
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @personal_info }
