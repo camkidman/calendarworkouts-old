@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = current_user
-    @personal_info = @user.create_personal_info(params[:personal_info])
+    @personal_info = @user.build_personal_info
     redirect_to new_user_registration_path unless @user.id
     respond_to do |format|
       format.html # show.html.erb
