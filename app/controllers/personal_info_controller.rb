@@ -24,8 +24,8 @@ class PersonalInfoController < ApplicationController
   # GET /personal_info/new
   # GET /personal_info/new.json
   def new
-    user = current_user
-    @personal_info = PersonalInfo.new(params[user.id])
+    @user = current_user.id
+    @personal_info = PersonalInfo.new(params[@user])
 
     respond_to do |format|
       format.html # new.html.erb

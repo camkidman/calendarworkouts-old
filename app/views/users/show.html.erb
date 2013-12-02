@@ -3,7 +3,7 @@
 <%= render "workout_page" %>
 <%= render "info" %>
 <% elsif user_signed_in? %>
-<%= render :partial => "/personal_info/form" %>
+<%= render :partial => "/personal_info/form", :locals => {personal_info: @personal_info } %>
 <% else %>
 <%= link_to "Get started now!", new_user_registration_path %>
 <% end %>
