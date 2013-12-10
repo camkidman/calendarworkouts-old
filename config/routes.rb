@@ -1,16 +1,17 @@
 Calendarworkouts::Application.routes.draw do
   devise_for :user, :path_names => { :sign_up => "register" }
-  match '/users/:id', to: 'users#show', as: :user, via: :get
-  match '/users', to: 'users#show', as: :user, via: :get
-  
+  #match '/users/:id', to: 'users#show', as: :user, via: :get
+  #match '/users', to: 'users#show', as: :user, via: :get
+
   resources :exercises
+	resources :users
+	resources :user_personal_info
 
+  #resources :users do
+  #  resources :personal_info, controller: 'personal_infos'
+  #end
 
-  resources :users do
-    resources :personal_info, controller: 'personal_infos'
-  end
-
-  root :to => "users#show" 
+  root :to => 'users#show' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

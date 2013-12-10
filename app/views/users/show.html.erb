@@ -1,9 +1,10 @@
 <h1>Your Information</h1>
 <% if user_signed_in? && current_user.personal_info %>
 <%= render "workout_page" %>
-<%= render "info" %>
+<%= render "info" %>-->
 <% elsif user_signed_in? %>
-<%= render :partial => "/personal_info/form", :locals => {personal_info: @personal_info } %>
+<%= render partial: "personal_info/form", locals: { personal_info: @personal_info } %>
+<%= redirect_to user_personal_info_path %>
 <% else %>
 <%= link_to "Get started now!", new_user_registration_path %>
 <% end %>
